@@ -1,7 +1,4 @@
-NAME	= libftprintf
-CC = gcc
-INC = ft_printf.h
-CFLAGS = -Wall -Wextra -Werror
+NAME	= libftprintf.a
 
 SRCS = ft_loc.c \
 			ft_putnbr.c \
@@ -10,23 +7,24 @@ SRCS = ft_loc.c \
 			ft_uns.c \
 			ft_putchr.c \
 			ft_loc.c \
+			ft_putstr.c \
+			ft_printf.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS		= $(SRCS:%.c=%.o)
 
-all: $(NAME).a
+FLAGS		= -Wall -Wextra -Werror
 
-$(NAME).a: $(OBJS)
-	@ar -rcs $(NAME).a $(OBJS)
+$(NAME):
+	gcc $(FLAGS) -c $(SRCS) -I./
+	ar rc $(NAME) $(OBJS)
 
-%.o: %.c $(INC)
-	@$(CC) -c $< -o $@ $(CFLAGS)
-
+all: $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME).a
+	rm -f $(NAME)
 
 re: fclean all
 

@@ -15,7 +15,7 @@
 int	ft_uns(unsigned int x,int *res)
 {
 	if (x >= 0 && x <= 9)
-		res += ft_putchr(x + '0');
+		*res += ft_putchr(x + '0');
 	else
 	{
 		ft_uns(x / 10,res);

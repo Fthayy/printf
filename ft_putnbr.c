@@ -16,21 +16,21 @@ int	ft_putnbr(int nb,int *res)
 {
 	if (nb == -2147483648)
 	{
-		res += ft_putchr('-');
-		res += ft_putchr('2');
+		*res += ft_putchr('-');
+		*res += ft_putchr('2');
 		nb = 147483648;
 	}
 	if (nb < 0)
 	{
-		ft_putchr('-');
+		*res = ft_putchr('-');
 		nb *= -1;
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10,int res);
-		ft_putnbr(nb % 10,int res);
+		ft_putnbr(nb / 10,res);
+		ft_putnbr(nb % 10,res);
 	}
 	else
-		res += ft_putchr(nb + 48);
+		*res += ft_putchr(nb + 48);
 	return (*res);
 }
