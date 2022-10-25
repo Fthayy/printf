@@ -18,12 +18,12 @@
 # include <unistd.h>
 
 int	ft_printf(const char *str, ...);
-int	ft_x(unsigned int nbr,int *i);
-int	ft_uns(unsigned int x, int *i);
+int	ft_x(unsigned int nbr,int *res);
+int	ft_uns(unsigned int x, int *res);
 int	ft_putstr(char *c);
-int	ft_putnbr(unsigned int nb,int *i);
+int	ft_putnbr(int nb,int *res);
 int	ft_putchr(char c);
-int	ft_loc(unsigned long nbr,int *i);
-int	ft_bigx(unsigned int nbr,int *i);
+int	ft_loc(unsigned long nbr,int *res);
+int	ft_bigx(unsigned int nbr,int *res);
 
 #endif

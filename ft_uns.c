@@ -14,9 +14,6 @@
 
 int	ft_uns(unsigned int x,int *res)
 {
-	int res;
-
-	res = 0;
 	if (x >= 0 && x <= 9)
 		res += ft_putchr(x + '0');
 	else

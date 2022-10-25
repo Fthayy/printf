@@ -22,13 +22,13 @@ int	ft_check(va_list ag, char str)
 	if (str == 's')
 		res += ft_putstr(va_arg(ag, char *));
 	if (str == 'd')
-		res += ft_putnbr(va_arg(ag, int));
+		res += ft_putnbr(va_arg(ag, int),&res);
 	if (str == 'u')
-		res += ft_uns(va_arg(ag, unsigned int));
+		res += ft_uns(va_arg(ag, unsigned int),&res);
 	if (str == 'x')
-		res += ft_x(va_arg(ag, unsigned int));
+		res += ft_x(va_arg(ag, unsigned int),&res);
 	if (str == 'X')
-		res += ft_bigx(va_arg(ag, unsigned int));
+		res += ft_bigx(va_arg(ag, unsigned int),&res);
 	if (str == '%')
 		res += ft_putchr('%');
 	if (str == 'p')

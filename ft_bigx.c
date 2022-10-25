@@ -14,9 +14,6 @@
 
 int	ft_bigx(unsigned int nbr,int *res)
 {
-	int	res;
-
-	res = 0;
 	if (nbr > 0 && nbr <= 9)
 		res += ft_putchr(nbr + '0');
 	else if (nbr <= 16)

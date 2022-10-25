@@ -14,9 +14,6 @@
 
 int	ft_putnbr(int nb,int *res)
 {
-	int res;
-
-	res = 0;
 	if (nb == -2147483648)
 	{
 		res += ft_putchr('-');

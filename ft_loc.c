@@ -12,11 +12,8 @@
 
 #include "ft_printf.h"
 
-int	ft_loc(unsigned long nbr,*res)
+int	ft_loc(unsigned long nbr,int *res)
 {
-	int res;
-
-	res = 0;
 	if (nbr > 0 && nbr <= 9)
 		res += ft_putchr(nbr + '0');
 	else if (nbr <= 16)
