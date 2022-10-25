@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_loc(unsigned long nbr)
+int	ft_loc(unsigned long nbr,*res)
 {
 	int res;
 
@@ -23,8 +23,8 @@ int	ft_loc(unsigned long nbr)
 		res += ft_putchr("0123456789abcdef"[nbr % 16]);
 	else
 	{
-		ft_x(nbr / 16);
-		ft_x(nbr % 16);
+		ft_x(nbr / 16,res);
+		ft_x(nbr % 16,res);
 	}
-	return (res);
+	return (*res);
 }

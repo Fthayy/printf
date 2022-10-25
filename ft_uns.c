@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_uns(unsigned int x)
+int	ft_uns(unsigned int x,int *res)
 {
 	int res;
 
@@ -21,8 +21,8 @@ int	ft_uns(unsigned int x)
 		res += ft_putchr(x + '0');
 	else
 	{
-		ft_uns(x / 10);
-		ft_uns(x % 10);
+		ft_uns(x / 10,res);
+		ft_uns(x % 10,res);
 	}
-	return (res);
+	return (*res);
 }

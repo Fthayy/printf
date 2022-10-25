@@ -13,7 +13,7 @@
 
 #include "ft_printf.h"
 
-int	ft_x(unsigned int nbr)
+int	ft_x(unsigned int nbr,int *res)
 {
 	int	res;
 
@@ -24,8 +24,8 @@ int	ft_x(unsigned int nbr)
 		res += ft_putchr("0123456789abcdef"[nbr % 16]);
 	else
 	{
-		ft_x(nbr / 16);
-		ft_x(nbr % 16);
+		ft_x(nbr / 16,res);
+		ft_x(nbr % 16,res);
 	}
-	return (res);
+	return (*res);
 }
