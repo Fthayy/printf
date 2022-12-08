@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int nb,int *res)
+int	ft_putnbr(int nb, int *res)
 {
 	if (nb == -2147483648)
 	{
@@ -27,8 +27,8 @@ int	ft_putnbr(int nb,int *res)
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10,res);
-		ft_putnbr(nb % 10,res);
+		ft_putnbr(nb / 10, res);
+		ft_putnbr(nb % 10, res);
 	}
 	else
 		*res += ft_putchr(nb + 48);
